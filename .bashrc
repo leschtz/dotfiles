@@ -11,4 +11,4 @@ if [ -d ~/git/dotfiles/bash_profile/ ]; then
 fi
 
 ## setting PSn values has to be the last thing, so this has to be in here.
-. ~/git/dotfiles/bash_profile/bash_prompt
+. ~/git/dotfiles/bash_prompt
