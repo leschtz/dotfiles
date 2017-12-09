@@ -66,6 +66,15 @@ function set_virtualenv () {
   fi
 }
 
+function set_course () {
+  if test -z "$COURSE" ; then
+        COURSE_SYMBOL=""
+  else
+        COURSE_SYMBOL="${BLUE}$(basename $COURSE)${COLOR_NONE} "
+  fi
+}
+
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
@@ -78,8 +87,11 @@ function set_bash_prompt () {
   # Set the BRANCH variable.
   set_git_branch
 
+  # Set the COURSE variable.
+  set_course
+
   # Set the bash prompt variable.
-  PS1="${PYTHON_VIRTUALENV}${YELLOW}\u${COLOR_NONE} \W ${BRANCH} ${PROMPT_SYMBOL}"
+  PS1="$COURSE_SYMBOL${PYTHON_VIRTUALENV}${YELLOW}\u${COLOR_NONE} \W ${BRANCH} ${PROMPT_SYMBOL}"
 }
 
 # Tell bash to execute this function just before displaying its prompt.
