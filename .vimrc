@@ -7,6 +7,8 @@ set softtabstop=4
 
 " show the line numbers/the horizontal line, to see where i am
 set number
+set relativenumber
+" set rnu
 "set ruler
 "set cursorline
 
