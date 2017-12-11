@@ -49,3 +49,7 @@ md ()
         pandoc -s -f markdown -t man "$*" | man -l -;
 }
 
+pdf ()
+{
+        xdg-open $1 &>/dev/null
+}
